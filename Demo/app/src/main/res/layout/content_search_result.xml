@@ -1,0 +1,564 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".ui.dashboard.SearchResult"
+    android:orientation="vertical"
+    tools:showIn="@layout/activity_search_result" >
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="@drawable/divider"
+            android:orientation="vertical"
+            android:showDividers="middle">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:showDividers="middle">
+
+                <TextView
+                    android:id="@+id/search_results_textview1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="运输单号"
+                    android:textSize="@dimen/textSize" />
+
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/search_results_edittext1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="5"
+                    android:hint="运输单号"
+                    app:met_floatingLabel="highlight"
+                    app:met_hideUnderline="false"
+                    app:met_primaryColor="#982360" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:showDividers="middle">
+
+                <TextView
+                    android:id="@+id/search_results__sender_info_textview"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:gravity="center"
+                    android:text="发件人"
+                    android:textSize="@dimen/textSize" />
+
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/search_results_sender_info_edittext1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="5"
+                    android:hint="姓名"
+                    app:met_floatingLabel="highlight"
+                    app:met_hideUnderline="false"
+                    app:met_primaryColor="#982360" />
+
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/search_results_sender_info_edittext2"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="5"
+                    android:hint="电话"
+                    app:met_floatingLabel="highlight"
+                    app:met_hideUnderline="false"
+                    app:met_primaryColor="#982360" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp">
+
+                <TextView
+                    android:id="@+id/search_results_sender_address_textview"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="发件地"
+                    android:textSize="@dimen/textSize" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="5"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="5"
+                        android:orientation="horizontal">
+
+                        <com.rengwuxian.materialedittext.MaterialEditText
+                            android:id="@+id/search_results_sender_address_edittext1"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:hint="国家"
+                            app:met_floatingLabel="highlight"
+                            app:met_hideUnderline="false"
+                            app:met_primaryColor="#982360" />
+
+                        <com.rengwuxian.materialedittext.MaterialEditText
+                            android:id="@+id/search_results_sender_address_edittext2"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:hint="地区"
+                            app:met_floatingLabel="highlight"
+                            app:met_hideUnderline="false"
+                            app:met_primaryColor="#982360" />
+
+                    </LinearLayout>
+
+                    <com.rengwuxian.materialedittext.MaterialEditText
+                        android:id="@+id/search_results_sender_address_edittext4"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="5"
+                        android:hint="具体地址"
+                        app:met_floatingLabel="highlight"
+                        app:met_hideUnderline="false"
+                        app:met_primaryColor="#982360" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:showDividers="middle">
+
+                <TextView
+                    android:id="@+id/search_results__receiver_info_textview"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:gravity="center"
+                    android:text="收件人"
+                    android:textSize="@dimen/textSize" />
+
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/search_results_receiver_info_edittext1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="5"
+                    android:hint="姓名"
+                    app:met_floatingLabel="highlight"
+                    app:met_hideUnderline="false"
+                    app:met_primaryColor="#982360" />
+
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/search_results_receiver_info_edittext2"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="5"
+                    android:hint="电话"
+                    app:met_floatingLabel="highlight"
+                    app:met_hideUnderline="false"
+                    app:met_primaryColor="#982360" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp">
+
+                <TextView
+                    android:id="@+id/search_results_receiver_address_textview"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="收件地"
+                    android:textSize="@dimen/textSize" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="5"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="5"
+                        android:orientation="horizontal">
+
+                        <com.rengwuxian.materialedittext.MaterialEditText
+                            android:id="@+id/search_results_receiver_address_edittext1"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:hint="省"
+                            app:met_floatingLabel="highlight"
+                            app:met_hideUnderline="false"
+                            app:met_primaryColor="#982360" />
+
+                        <com.rengwuxian.materialedittext.MaterialEditText
+                            android:id="@+id/search_results_receiver_address_edittext2"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:hint="市"
+                            app:met_floatingLabel="highlight"
+                            app:met_hideUnderline="false"
+                            app:met_primaryColor="#982360" />
+
+                        <com.rengwuxian.materialedittext.MaterialEditText
+                            android:id="@+id/search_results_receiver_address_edittext3"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:hint="区/县"
+                            app:met_floatingLabel="highlight"
+                            app:met_hideUnderline="false"
+                            app:met_primaryColor="#982360" />
+                    </LinearLayout>
+
+                    <com.rengwuxian.materialedittext.MaterialEditText
+                        android:id="@+id/search_results_receiver_address_edittext4"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="5"
+                        android:hint="具体地址"
+                        app:met_floatingLabel="highlight"
+                        app:met_hideUnderline="false"
+                        app:met_primaryColor="#982360" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp">
+
+                <TextView
+                    android:id="@+id/search_results_textview4_1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:gravity="center"
+                    android:text="包裹信息"
+                    android:textSize="@dimen/textSize" />
+
+
+                <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+                    android:id="@+id/search_results_spinner"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="5"
+                    android:hint="包裹类型" />
+
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/search_results_edittext4_2"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:hint="重量"
+                    app:met_floatingLabel="highlight"
+                    app:met_hideUnderline="false"
+                    app:met_primaryColor="#982360" />
+
+                <TextView
+                    android:id="@+id/search_results_textview4_2"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="(KG)"
+                    android:textSize="@dimen/textSize" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp">
+
+                <TextView
+                    android:id="@+id/search_results_textview5"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="查验结论"
+                    android:textSize="@dimen/textSize" />
+
+                <CheckBox
+                    android:id="@+id/search_results_checkBox5_1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2.5"
+                    android:text="合格" />
+
+                <CheckBox
+                    android:id="@+id/search_results_checkBox5_2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2.5"
+                    android:text="截留" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp">
+
+                <TextView
+                    android:id="@+id/search_results_textview6"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="处理方式"
+                    android:textSize="@dimen/textSize" />
+                <CheckBox
+                    android:id="@+id/search_results_checkBox6_2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.25"
+                    android:text="放行" />
+                <CheckBox
+                    android:id="@+id/search_results_checkBox6_1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.25"
+                    android:text="销毁" />
+                <CheckBox
+                    android:id="@+id/search_results_checkBox6_3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.25"
+                    android:text="送样" />
+
+
+
+
+                <CheckBox
+                    android:id="@+id/search_results_checkBox6_4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.25"
+                    android:text="退运" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp">
+
+                <TextView
+                    android:id="@+id/search_results_textview7"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:gravity="center"
+                    android:text="入库信息"
+                    android:textSize="@dimen/textSize" />
+
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/search_results_edittext7_1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="5"
+                    android:hint="入库时间"
+                    app:met_floatingLabel="highlight"
+                    app:met_hideUnderline="false"
+                    app:met_primaryColor="#982360" />
+
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/search_results_edittext7_2"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="5"
+                    android:hint="入库地点"
+                    app:met_floatingLabel="highlight"
+                    app:met_hideUnderline="false"
+                    app:met_primaryColor="#982360" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp">
+
+                <TextView
+                    android:id="@+id/search_results_textview8"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:gravity="center"
+                    android:text="出库信息"
+                    android:textSize="@dimen/textSize" />
+
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/search_results_edittext8_1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="5"
+                    android:hint="出库时间"
+                    app:met_floatingLabel="highlight"
+                    app:met_hideUnderline="false"
+                    app:met_primaryColor="#982360" />
+
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/search_results_edittext8_2"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="5"
+                    android:hint="出库地点"
+                    app:met_floatingLabel="highlight"
+                    app:met_hideUnderline="false"
+                    app:met_primaryColor="#982360" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp">
+
+                <TextView
+                    android:id="@+id/search_results_textview9"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="上传图片"
+                    android:textSize="@dimen/textSize" />
+
+                <ImageView
+                    android:id="@+id/search_results_image_show"
+                    android:layout_width="0dp"
+                    android:layout_height="250dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="6dp"
+                    android:layout_weight="5" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp">
+
+                <TextView
+                    android:id="@+id/search_results_textview10"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="操作人"
+                    android:textSize="@dimen/textSize" />
+
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/search_results_edittext10"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="5"
+                    android:hint="操作人"
+                    app:met_floatingLabel="highlight"
+                    app:met_hideUnderline="false"
+                    app:met_primaryColor="#982360" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/search_results_textview_operating_time"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="操作时间"
+                    android:textSize="@dimen/textSize" />
+
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/search_results_edittext_operating_time"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="5"
+                    android:hint="操作时间"
+                    app:met_floatingLabel="highlight"
+                    app:met_hideUnderline="false"
+                    app:met_primaryColor="#982360" />
+
+            </LinearLayout>
+            <Button
+                android:id="@+id/search_results_button_print"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#FF7043"
+                android:text="打印" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
