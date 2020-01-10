@@ -21,7 +21,14 @@
             android:divider="@drawable/divider"
             android:orientation="vertical"
             android:showDividers="middle">
-
+        <LinearLayout
+            android:id="@+id/search_result_mail_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:divider="@drawable/divider"
+            android:orientation="vertical"
+            android:showDividers="middle">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -551,6 +558,8 @@
                     app:met_primaryColor="#982360" />
 
             </LinearLayout>
+
+        </LinearLayout>
             <Button
                 android:id="@+id/search_results_button_print"
                 android:layout_width="match_parent"

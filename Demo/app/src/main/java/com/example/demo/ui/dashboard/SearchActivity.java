@@ -62,6 +62,7 @@ public class SearchActivity extends AppCompatActivity {
                     } else {
                         Intent intent = new Intent(SearchActivity.this, SearchResultByIdcardAndPassport.class);
                         intent.putExtra("class", "idcard");
+                        intent.putExtra("idcard_id",number);
                         intent.putExtra("idcard", s);
                         startActivity(intent);
                     }
@@ -75,6 +76,7 @@ public class SearchActivity extends AppCompatActivity {
                     } else {
                         Intent intent = new Intent(SearchActivity.this, SearchResultByIdcardAndPassport.class);
                         intent.putExtra("class", "passport");
+                        intent.putExtra("passport_id",number);
                         intent.putExtra("passport", s);
                         startActivity(intent);
                     }
