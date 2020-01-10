@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".ui.home.IDCardActivity"
+    tools:showIn="@layout/activity_idcard">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="@drawable/divider"
+            android:orientation="vertical"
+            android:showDividers="middle">
+
+            <LinearLayout
+                android:id="@+id/linearLayout_idcard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp">
+
+                    <TextView
+                        android:id="@+id/idcard_records_textview1"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="身份证号"
+                        android:textSize="@dimen/textSize" />
+
+                    <com.rengwuxian.materialedittext.MaterialEditText
+                        android:id="@+id/idcard_records_edittext1"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="4"
+                        android:hint="身份证号码"
+                        app:met_floatingLabel="highlight"
+                        app:met_hideUnderline="false"
+                        app:met_maxCharacters="18"
+                        app:met_primaryColor="#982360" />
+
+                    <Button
+                        android:id="@+id/button_scan_idcard"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="扫描身份证"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp">
+
+                    <TextView
+                        android:id="@+id/idcard_records_textview2"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="姓名"
+                        android:textSize="@dimen/textSize" />
+
+                    <com.rengwuxian.materialedittext.MaterialEditText
+                        android:id="@+id/idcard_records_edittext2"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="5"
+                        android:hint="姓名"
+                        app:met_floatingLabel="highlight"
+                        app:met_hideUnderline="false"
+                        app:met_primaryColor="#982360" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp">
+
+                    <TextView
+                        android:id="@+id/idcard_records_textview6"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:gravity="center"
+                        android:text="出生日期"
+                        android:textSize="@dimen/textSize" />
+
+                    <com.rengwuxian.materialedittext.MaterialEditText
+                        android:id="@+id/idcard_records_edittext6_1"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="4"
+                        android:hint="年"
+                        app:met_floatingLabel="highlight"
+                        app:met_hideUnderline="false"
+                        app:met_primaryColor="#982360" />
+
+                    <com.rengwuxian.materialedittext.MaterialEditText
+                        android:id="@+id/idcard_records_edittext6_2"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:hint="月"
+                        app:met_floatingLabel="highlight"
+                        app:met_hideUnderline="false"
+                        app:met_primaryColor="#982360" />
+
+                    <com.rengwuxian.materialedittext.MaterialEditText
+                        android:id="@+id/idcard_records_edittext6_3"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:hint="日"
+                        app:met_floatingLabel="highlight"
+                        app:met_hideUnderline="false"
+                        app:met_primaryColor="#982360" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp">
+
+                    <TextView
+                        android:id="@+id/idcard_records_textview3"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="性别"
+                        android:textSize="@dimen/textSize" />
+
+                    <com.rengwuxian.materialedittext.MaterialEditText
+                        android:id="@+id/idcard_records_edittext3"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="5"
+                        android:hint="性别"
+                        app:met_floatingLabel="highlight"
+                        app:met_hideUnderline="false"
+                        app:met_primaryColor="#982360" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp">
+
+                    <TextView
+                        android:id="@+id/idcard_records_textview4_1"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="民族"
+                        android:textSize="@dimen/textSize" />
+
+                    <com.rengwuxian.materialedittext.MaterialEditText
+                        android:id="@+id/idcard_records_edittext10"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="5"
+                        android:hint="民族"
+                        app:met_floatingLabel="highlight"
+                        app:met_hideUnderline="false"
+                        app:met_primaryColor="#982360" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp">
+
+                    <TextView
+                        android:id="@+id/idcard_records_textview5_2"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="住址"
+                        android:textSize="@dimen/textSize" />
+
+                    <com.rengwuxian.materialedittext.MaterialEditText
+                        android:id="@+id/idcard_records_edittext7"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="5"
+                        android:hint="住址"
+                        app:met_floatingLabel="highlight"
+                        app:met_hideUnderline="false"
+                        app:met_primaryColor="#982360" />
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/button_idcard_records_save"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#66CC99"
+                    android:text="保存" />
+
+                <Button
+                    android:id="@+id/button_idcard_records_print"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#FF7043"
+                    android:text="打印" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

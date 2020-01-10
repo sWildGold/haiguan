@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.animal">
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/haiguan2"
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:grantUriPermissions="true"
+            tools:replace="android:authorities"
+            android:exported="false">
+
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths"
+                tools:replace="android:resource"/>
+
+        </provider>
+
+
+        <activity
+            android:name="com.example.animal.ui.notifications.Knowledge2Activity"
+            android:label="@string/title_activity_knowledge2"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name="com.example.animal.ui.dashboard.SearchResultByIdcardAndPassport"
+            android:label="@string/title_activity_search_result_by_idcard_and_passport"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.example.animal.ui.notifications.Knowledge1Activity"
+            android:label="@string/title_activity_knowledge1"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.example.animal.ui.notifications.WordsActivity"
+            android:label="@string/title_activity_words"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.example.animal.ui.home.IDCardActivity"
+            android:label="@string/title_activity_idcard"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.example.animal.ui.dashboard.SearchResult"
+            android:label="@string/title_activity_search_result"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.example.animal.ui.dashboard.SearchActivity"
+            android:label="@string/title_activity_search"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.example.animal.ui.dashboard.ChartByCountry"
+            android:label="@string/title_activity_chart_by_country"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.example.animal.ui.home.MailRecords"
+            android:label="@string/title_activity_mail_records"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.example.animal.ui.home.PassportRecords"
+            android:label="@string/title_activity_passport_records"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.example.animal.ui.ui.login.LoginActivity"
+            android:label="@string/title_activity_login">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.animal.MainActivity"
+            android:label="@string/title_activity_main" />
+        <activity
+            android:name="com.example.animal.ui.dashboard.ChartByTime"
+            android:label="@string/title_activity_chart_by_time"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.example.animal.ui.dashboard.ChartByClass"
+            android:label="@string/title_activity_chart_by_class"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+    </application>
+
+</manifest>

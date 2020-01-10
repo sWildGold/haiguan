@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".ui.home.PassportRecords"
+    tools:showIn="@layout/activity_passport_records">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="@drawable/divider"
+            android:orientation="vertical"
+            android:showDividers="middle">
+
+            <LinearLayout
+                android:id="@+id/linearLayout_passport"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp">
+
+                    <TextView
+                        android:id="@+id/passport_records_textview1"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="护照号码"
+                        android:textSize="@dimen/textSize" />
+
+                    <com.rengwuxian.materialedittext.MaterialEditText
+                        android:id="@+id/passport_records_edittext1"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="4"
+                        android:hint="护照号码"
+                        app:met_floatingLabel="highlight"
+                        app:met_hideUnderline="false"
+                        app:met_maxCharacters="9"
+                        app:met_primaryColor="#982360" />
+
+                    <Button
+                        android:id="@+id/button_scan_passport"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="扫描护照" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp">
+
+                    <TextView
+                        android:id="@+id/passport_records_textview2"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="本国姓名"
+                        android:textSize="@dimen/textSize" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="5"
+                        android:orientation="horizontal">
+
+                        <com.rengwuxian.materialedittext.MaterialEditText
+                            android:id="@+id/passport_records_edittext2_1"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="5"
+                            android:hint="本国姓"
+                            app:met_floatingLabel="highlight"
+                            app:met_hideUnderline="false"
+                            app:met_primaryColor="#982360" />
+
+                        <com.rengwuxian.materialedittext.MaterialEditText
+                            android:id="@+id/passport_records_edittext2_2"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="5"
+                            android:hint="本国名"
+                            app:met_floatingLabel="highlight"
+                            app:met_hideUnderline="false"
+                            app:met_primaryColor="#982360" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp">
+
+                    <TextView
+                        android:id="@+id/passport_records_textview3"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="英文姓名"
+                        android:textSize="@dimen/textSize" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="5"
+                        android:orientation="horizontal">
+
+                        <com.rengwuxian.materialedittext.MaterialEditText
+                            android:id="@+id/passport_records_edittext3_1"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="5"
+                            android:hint="英文姓"
+                            app:met_floatingLabel="highlight"
+                            app:met_hideUnderline="false"
+                            app:met_primaryColor="#982360" />
+
+                        <com.rengwuxian.materialedittext.MaterialEditText
+                            android:id="@+id/passport_records_edittext3_2"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="5"
+                            android:hint="英文名"
+                            app:met_floatingLabel="highlight"
+                            app:met_hideUnderline="false"
+                            app:met_primaryColor="#982360" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp">
+
+                    <TextView
+                        android:id="@+id/passport_records_textview4_1"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="国籍"
+                        android:textSize="@dimen/textSize" />
+
+                    <com.rengwuxian.materialedittext.MaterialEditText
+                        android:id="@+id/passport_records_edittext10"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="5"
+                        android:hint="国籍"
+                        app:met_floatingLabel="highlight"
+                        app:met_hideUnderline="false"
+                        app:met_primaryColor="#982360" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp">
+
+                    <TextView
+                        android:id="@+id/passport_records_textview5_2"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="国家码"
+                        android:textSize="@dimen/textSize" />
+
+                    <com.rengwuxian.materialedittext.MaterialEditText
+                        android:id="@+id/passport_records_edittext7"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="5"
+                        android:hint="国家码"
+                        app:met_floatingLabel="highlight"
+                        app:met_hideUnderline="false"
+                        app:met_primaryColor="#982360" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp">
+
+                    <TextView
+                        android:id="@+id/passport_records_textview6"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:gravity="center"
+                        android:text="有效期至"
+                        android:textSize="@dimen/textSize" />
+
+                    <com.rengwuxian.materialedittext.MaterialEditText
+                        android:id="@+id/passport_records_edittext6_1"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="4"
+                        android:hint="年"
+                        app:met_floatingLabel="highlight"
+                        app:met_hideUnderline="false"
+                        app:met_primaryColor="#982360" />
+
+                    <com.rengwuxian.materialedittext.MaterialEditText
+                        android:id="@+id/passport_records_edittext6_2"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:hint="月"
+                        app:met_floatingLabel="highlight"
+                        app:met_hideUnderline="false"
+                        app:met_primaryColor="#982360" />
+
+                    <com.rengwuxian.materialedittext.MaterialEditText
+                        android:id="@+id/passport_records_edittext6_3"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:hint="日"
+                        app:met_floatingLabel="highlight"
+                        app:met_hideUnderline="false"
+                        app:met_primaryColor="#982360" />
+
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/button_passport_records_save"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#66CC99"
+                    android:text="保存" />
+
+                <Button
+                    android:id="@+id/button_passport_records_print"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#FF7043"
+                    android:text="打印" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
