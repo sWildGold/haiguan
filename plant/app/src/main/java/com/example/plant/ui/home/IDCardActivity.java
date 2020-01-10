@@ -1,4 +1,4 @@
-package com.example.animal.ui.home;
+package com.example.plant.ui.home;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -23,12 +23,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.FileProvider;
 
-import com.example.animal.R;
-import com.example.animal.database.DatabaseService;
-import com.example.animal.passport.AuthService;
-import com.example.animal.passport.Base64Util;
-import com.example.animal.passport.FileUtil;
-import com.example.animal.passport.HttpUtil;
+import com.example.plant.R;
+import com.example.plant.database.DatabaseService;
+import com.example.plant.passport.AuthService;
+import com.example.plant.passport.Base64Util;
+import com.example.plant.passport.FileUtil;
+import com.example.plant.passport.HttpUtil;
 import com.rengwuxian.materialedittext.MaterialEditText;
 import com.wildma.pictureselector.PictureSelector;
 import com.yanzhenjie.permission.Action;
@@ -148,7 +148,7 @@ public class IDCardActivity extends AppCompatActivity {
                                     toast1.show();
                                 }
                                 document.close();
-                                String authority = "com.example.animal.provider";
+                                String authority = "com.example.plant.provider";
                                 File outputFile = new File(path);
                                 Intent share = new Intent();
                                 share.setAction(Intent.ACTION_VIEW);

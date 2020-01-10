@@ -149,7 +149,7 @@ public class PassportRecords extends AppCompatActivity {
                                     toast1.show();
                                 }
                                 document.close();
-                                String authority = "com.example.demo.provider";
+                                String authority = "com.example.animal.provider";
                                 File outputFile = new File(path);
                                 Intent share = new Intent();
                                 share.setAction(Intent.ACTION_VIEW);

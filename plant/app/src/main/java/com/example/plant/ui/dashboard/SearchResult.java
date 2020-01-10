@@ -1,4 +1,4 @@
-package com.example.animal.ui.dashboard;
+package com.example.plant.ui.dashboard;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -22,8 +22,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.FileProvider;
 
-import com.example.animal.R;
-import com.example.animal.database.Mail;
+import com.example.plant.R;
+import com.example.plant.database.Mail;
 import com.rengwuxian.materialedittext.MaterialEditText;
 import com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner;
 import com.yanzhenjie.permission.Action;
@@ -190,7 +190,7 @@ public class SearchResult extends AppCompatActivity {
                                     toast1.show();
                                 }
                                 document.close();
-                                String authority = "com.example.animal.provider";
+                                String authority = "com.example.plant.provider";
                                 File outputFile = new File(path);
                                 Intent share = new Intent();
                                 share.setAction(Intent.ACTION_VIEW);

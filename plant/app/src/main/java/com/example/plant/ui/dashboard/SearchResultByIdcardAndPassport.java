@@ -1,4 +1,4 @@
-package com.example.animal.ui.dashboard;
+package com.example.plant.ui.dashboard;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -21,7 +21,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.FileProvider;
 
-import com.example.animal.R;
+import com.example.plant.R;
 import com.yanzhenjie.permission.Action;
 import com.yanzhenjie.permission.AndPermission;
 import com.yanzhenjie.permission.runtime.Permission;
@@ -121,7 +121,7 @@ public class SearchResultByIdcardAndPassport extends AppCompatActivity {
                                     toast1.show();
                                 }
                                 document.close();
-                                String authority = "com.example.animal.provider";
+                                String authority = "com.example.plant.provider";
                                 File outputFile = new File(path);
                                 Intent share = new Intent();
                                 share.setAction(Intent.ACTION_VIEW);

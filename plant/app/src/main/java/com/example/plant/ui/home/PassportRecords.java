@@ -1,4 +1,4 @@
-package com.example.animal.ui.home;
+package com.example.plant.ui.home;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -23,12 +23,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.FileProvider;
 
-import com.example.animal.R;
-import com.example.animal.database.DatabaseService;
-import com.example.animal.passport.AuthService;
-import com.example.animal.passport.Base64Util;
-import com.example.animal.passport.FileUtil;
-import com.example.animal.passport.HttpUtil;
+import com.example.plant.R;
+import com.example.plant.database.DatabaseService;
+import com.example.plant.passport.AuthService;
+import com.example.plant.passport.Base64Util;
+import com.example.plant.passport.FileUtil;
+import com.example.plant.passport.HttpUtil;
 import com.rengwuxian.materialedittext.MaterialEditText;
 import com.wildma.pictureselector.PictureSelector;
 import com.yanzhenjie.permission.Action;
@@ -43,7 +43,7 @@ import java.io.IOException;
 import java.net.URLEncoder;
 import java.util.List;
 
-public class IDCardActivity extends AppCompatActivity {
+public class PassportRecords extends AppCompatActivity {
     //private PrintManager mgr = null;
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
@@ -55,8 +55,8 @@ public class IDCardActivity extends AppCompatActivity {
             StrictMode.setThreadPolicy(policy);
         }
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_idcard);
-        Toolbar toolbar = findViewById(R.id.toolbar_idcard);
+        setContentView(R.layout.activity_passport_records);
+        Toolbar toolbar = findViewById(R.id.toolbar_passport_records);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
@@ -66,43 +66,44 @@ public class IDCardActivity extends AppCompatActivity {
                 finish();
             }
         });
-        Button scan_idcard = findViewById(R.id.button_scan_idcard);
-        scan_idcard.setOnClickListener(new View.OnClickListener() {
+
+        Button scan_passport = findViewById(R.id.button_scan_passport);
+        scan_passport.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 PictureSelector
-                        .create(IDCardActivity.this, PictureSelector.SELECT_REQUEST_CODE)
+                        .create(PassportRecords.this, PictureSelector.SELECT_REQUEST_CODE)
                         .selectPicture(false, 200, 200, 1, 1);
             }
         });
-        Button save_idcard = findViewById(R.id.button_idcard_records_save);
+        Button save_idcard = findViewById(R.id.button_passport_records_save);
         save_idcard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                LinearLayout linearLayout = findViewById(R.id.linearLayout_idcard);
+                LinearLayout linearLayout = findViewById(R.id.linearLayout_passport);
                 String s = bitmapToString(loadBitmapFromView(linearLayout));
-                MaterialEditText editText = findViewById(R.id.idcard_records_edittext1);
+                MaterialEditText editText = findViewById(R.id.passport_records_edittext1);
                 String id = editText.getText().toString();
                 DatabaseService dbService = DatabaseService.getDbService();
-                int result = dbService.insertIdcardData(id, s);
+                int result = dbService.insertPassportData(id, s);
                 if (result != -1) {
-                    Toast toast1 = Toast.makeText(IDCardActivity.this, "已保存", Toast.LENGTH_SHORT);
+                    Toast toast1 = Toast.makeText(PassportRecords.this, "已保存", Toast.LENGTH_SHORT);
                     toast1.setGravity(Gravity.CENTER, 0, 0);
                     toast1.show();
                 } else {
-                    Toast toast1 = Toast.makeText(IDCardActivity.this, "请重试", Toast.LENGTH_SHORT);
+                    Toast toast1 = Toast.makeText(PassportRecords.this, "请重试", Toast.LENGTH_SHORT);
                     toast1.setGravity(Gravity.CENTER, 0, 0);
                     toast1.show();
                 }
             }
         });
-        Button btnPrint = findViewById(R.id.button_idcard_records_print);
+        Button btnPrint = findViewById(R.id.button_passport_records_print);
         btnPrint.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.KITKAT)
             @Override
             public void onClick(View v) {
 
-                AndPermission.with(IDCardActivity.this)
+                AndPermission.with(PassportRecords.this)
                         .runtime()
                         .permission(
                                 Permission.WRITE_EXTERNAL_STORAGE,
@@ -112,17 +113,17 @@ public class IDCardActivity extends AppCompatActivity {
                         .onGranted(new Action<List<String>>() {
                             @Override
                             public void onAction(List<String> permissions) {
-                                Toast toast = Toast.makeText(IDCardActivity.this, "授权成功", Toast.LENGTH_SHORT);
+                                Toast toast = Toast.makeText(PassportRecords.this, "授权成功", Toast.LENGTH_SHORT);
                                 toast.setGravity(Gravity.CENTER, 0, 0);
                                 toast.show();
-                                MaterialEditText editText = findViewById(R.id.idcard_records_edittext1);
+                                MaterialEditText editText = findViewById(R.id.passport_records_edittext1);
                                 String path = Environment.getExternalStorageDirectory() + File.separator + editText.getText().toString() +".pdf";
-                                Toast toast11 = Toast.makeText(IDCardActivity.this, path, Toast.LENGTH_SHORT);
+                                Toast toast11 = Toast.makeText(PassportRecords.this, path, Toast.LENGTH_SHORT);
                                 toast11.setGravity(Gravity.CENTER, 0, 0);
                                 toast11.show();
                                 PdfDocument document = new PdfDocument();
                                 // ll_model是一个LinearLayout
-                                LinearLayout ll_model = findViewById(R.id.linearLayout_idcard);
+                                LinearLayout ll_model = findViewById(R.id.linearLayout_passport);
                                 PdfDocument.PageInfo pageInfo = new PdfDocument.PageInfo.Builder(ll_model.getWidth(), ll_model.getHeight(), 1).create();
                                 PdfDocument.Page page = document.startPage(pageInfo);
                                 ll_model.draw(page.getCanvas());
@@ -135,7 +136,7 @@ public class IDCardActivity extends AppCompatActivity {
                                         e.delete();
                                     }
                                     document.writeTo(new FileOutputStream(e));
-                                    Toast toast1 = Toast.makeText(IDCardActivity.this, "已保存" +
+                                    Toast toast1 = Toast.makeText(PassportRecords.this, "已保存" +
                                             "" +
                                             "", Toast.LENGTH_SHORT);
                                     toast1.setGravity(Gravity.CENTER, 0, 0);
@@ -143,17 +144,17 @@ public class IDCardActivity extends AppCompatActivity {
                                     //print("Test PDF",new PdfDocumentAdapter(getApplicationContext()),new PrintAttributes.Builder().build());
                                 } catch (IOException e) {
                                     e.printStackTrace();
-                                    Toast toast1 = Toast.makeText(IDCardActivity.this, "请重试", Toast.LENGTH_SHORT);
+                                    Toast toast1 = Toast.makeText(PassportRecords.this, "请重试", Toast.LENGTH_SHORT);
                                     toast1.setGravity(Gravity.CENTER, 0, 0);
                                     toast1.show();
                                 }
                                 document.close();
-                                String authority = "com.example.animal.provider";
+                                String authority = "com.example.plant.provider";
                                 File outputFile = new File(path);
                                 Intent share = new Intent();
                                 share.setAction(Intent.ACTION_VIEW);
                                 share.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                                Uri uri = FileProvider.getUriForFile(IDCardActivity.this, authority, outputFile);
+                                Uri uri = FileProvider.getUriForFile(PassportRecords.this, authority, outputFile);
                                 //Uri uri = Uri.fromFile(outputFile);
                                 share.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
                                 share.setDataAndType(uri, "application/pdf");
@@ -164,7 +165,7 @@ public class IDCardActivity extends AppCompatActivity {
                         .onDenied(new Action<List<String>>() {
                             @Override
                             public void onAction(List<String> permissions) {
-                                Toast toast = Toast.makeText(IDCardActivity.this, "授权失败", Toast.LENGTH_SHORT);
+                                Toast toast = Toast.makeText(PassportRecords.this, "授权失败", Toast.LENGTH_SHORT);
                                 toast.setGravity(Gravity.CENTER, 0, 0);
                                 toast.show();
                             }
@@ -183,14 +184,18 @@ public class IDCardActivity extends AppCompatActivity {
         if (requestCode == PictureSelector.SELECT_REQUEST_CODE) {
             if (data != null) {
                 String filePath = data.getStringExtra(PictureSelector.PICTURE_PATH);
-                String url = "https://aip.baidubce.com/rest/2.0/ocr/v1/idcard";
+
+                //String filePath = Environment.getExternalStorageDirectory() + File.separator + "passport.jpg";
+                String url = "https://aip.baidubce.com/rest/2.0/ocr/v1/passport";
                 String result = "失败";
                 try {
                     File file = imageFactory(filePath);
                     byte[] imgData = FileUtil.readFileByBytes(file);
                     String imgStr = Base64Util.encode(imgData);
                     String imgParam = URLEncoder.encode(imgStr, "UTF-8");
-                    String param = "id_card_side=" + "front" + "&image=" + imgParam;
+                    String param = "&image=" + imgParam;
+
+                    // 注意这里仅为了简化编码每一次请求都去获取access_token，线上环境access_token有过期时间， 客户端可自行缓存，过期后重新获取。
                     String accessToken = AuthService.getAuth();
 
                     result = HttpUtil.post(url, accessToken, param);
@@ -199,18 +204,50 @@ public class IDCardActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
 
-                Toast toast = Toast.makeText(IDCardActivity.this, result, Toast.LENGTH_SHORT);
+                Toast toast = Toast.makeText(PassportRecords.this, result, Toast.LENGTH_SHORT);
                 toast.setGravity(Gravity.CENTER, 0, 0);
                 toast.show();
 
-                //身份证号
-                int indexOfIDCard = result.indexOf("公民身份号码");
-                if (indexOfIDCard != -1) {
-                    int indexOfWords = result.indexOf("words", indexOfIDCard);
-                    int indexOfFristColon = result.indexOf("\"", indexOfWords + 6);
-                    int indexOfSecondColon = result.indexOf("\"", indexOfFristColon + 1);
-                    MaterialEditText editText = findViewById(R.id.idcard_records_edittext1);
-                    editText.setText(result.substring(indexOfFristColon + 1, indexOfSecondColon));
+                //国家码
+                int indexOfCountryCode = result.indexOf("国家码");
+                if (indexOfCountryCode != -1) {
+                    int indexOfWords = result.indexOf("words", indexOfCountryCode);
+                    int indexOfFirstColon = result.indexOf("\"", indexOfWords + 6);
+                    int indexOfSecondColon = result.indexOf("\"", indexOfFirstColon + 1);
+                    MaterialEditText edittext = findViewById(R.id.passport_records_edittext7);
+                    edittext.setText(result.substring(indexOfFirstColon + 1, indexOfSecondColon));
+                }
+
+                //护照号码
+                int indexOfPassportCode = result.indexOf("护照号码");
+                if (indexOfPassportCode != -1) {
+                    int indexOfWords = result.indexOf("words", indexOfPassportCode);
+                    int indexOfFirstColon = result.indexOf("\"", indexOfWords + 6);
+                    int indexOfSecondColon = result.indexOf("\"", indexOfFirstColon + 1);
+                    MaterialEditText edittext = findViewById(R.id.passport_records_edittext1);
+                    edittext.setText(result.substring(indexOfFirstColon + 1, indexOfSecondColon));
+                }
+
+                //有效期至
+                int indexOfValidDate = result.indexOf("有效期至");
+                if (indexOfValidDate != -1) {
+                    int indexOfWords = result.indexOf("words", indexOfValidDate);
+                    int indexOfFirstColon = result.indexOf("\"", indexOfWords + 6);
+                    int indexOfSecondColon = result.indexOf("\"", indexOfFirstColon + 1);
+                    String date = result.substring(indexOfFirstColon + 1, indexOfSecondColon);
+
+                    MaterialEditText editTextDay = findViewById(R.id.passport_records_edittext6_3);
+                    editTextDay.setText(date.substring(0, 2));
+
+                    int indexOfyue = date.indexOf("月");
+                    if (indexOfyue != -1) {
+                        MaterialEditText editTextMonth = findViewById(R.id.passport_records_edittext6_2);
+                        editTextMonth.setText(date.substring(2, indexOfyue));
+
+                        MaterialEditText editTextYear = findViewById(R.id.passport_records_edittext6_1);
+                        editTextYear.setText(date.substring(date.length() - 4));
+                    }
+
                 }
 
                 //姓名
@@ -219,54 +256,15 @@ public class IDCardActivity extends AppCompatActivity {
                     int indexOfWords = result.indexOf("words", indexOfName);
                     int indexOfFirstColon = result.indexOf("\"", indexOfWords + 6);
                     int indexOfSecondColon = result.indexOf("\"", indexOfFirstColon + 1);
-                    MaterialEditText editText = findViewById(R.id.idcard_records_edittext2);
-                    editText.setText(result.substring(indexOfFirstColon + 1, indexOfSecondColon));
+                    MaterialEditText editTextFamilyName = findViewById(R.id.passport_records_edittext2_1);
+                    editTextFamilyName.setText(result.substring(indexOfFirstColon, indexOfFirstColon + 1));
+                    MaterialEditText editTextFirstName = findViewById(R.id.passport_records_edittext2_2);
+                    editTextFirstName.setText(result.substring(indexOfFirstColon + 1, indexOfSecondColon));
                 }
 
-                //出生日期
-                int indexOfBirthday = result.indexOf("出生");
-                if (indexOfBirthday != -1) {
-                    int indexOfWords = result.indexOf("words", indexOfBirthday);
-                    int indexOfFirstColon = result.indexOf("\"", indexOfWords + 6);
-                    int indexOfSecondColon = result.indexOf("\"", indexOfFirstColon + 1);
-                    MaterialEditText editText = findViewById(R.id.idcard_records_edittext6_1);
-                    editText.setText(result.substring(indexOfFirstColon + 1, indexOfFirstColon + 5));
-                    editText = findViewById(R.id.idcard_records_edittext6_2);
-                    editText.setText(result.substring(indexOfFirstColon + 5, indexOfSecondColon - 2));
-                    editText = findViewById(R.id.idcard_records_edittext6_3);
-                    editText.setText(result.substring(indexOfSecondColon - 2, indexOfSecondColon));
-                }
+                //姓名拼音
+                //暂时空着
 
-                //性别
-                int indexOfSex = result.indexOf("性别");
-
-                if (indexOfSex != -1) {
-                    int indexOfWords = result.indexOf("words", indexOfSex);
-                    int indexOfFirstColon = result.indexOf("\"", indexOfWords + 6);
-                    MaterialEditText editText = findViewById(R.id.idcard_records_edittext3);
-                    editText.setText(result.substring(indexOfFirstColon + 1, indexOfFirstColon + 2));
-
-                }
-
-                //民族
-                int indexOfNation = result.indexOf("民族");
-                if (indexOfNation != -1) {
-                    int indexOfWords = result.indexOf("words", indexOfNation);
-                    int indexOfFirstColon = result.indexOf("\"", indexOfWords + 6);
-                    int indexOfSecondColon = result.indexOf("\"", indexOfFirstColon + 1);
-                    MaterialEditText editText = findViewById(R.id.idcard_records_edittext10);
-                    editText.setText(result.substring(indexOfFirstColon + 1, indexOfSecondColon));
-                }
-
-                //住址
-                int indexOfAddress = result.indexOf("住址");
-                if (indexOfAddress != -1) {
-                    int indexOfWords = result.indexOf("words", indexOfAddress);
-                    int indexOfFirstColon = result.indexOf("\"", indexOfWords + 6);
-                    int indexOfSecondColon = result.indexOf("\"", indexOfFirstColon + 1);
-                    MaterialEditText editText = findViewById(R.id.idcard_records_edittext7);
-                    editText.setText(result.substring(indexOfFirstColon + 1, indexOfSecondColon));
-                }
             }
         }
     }
@@ -303,7 +301,7 @@ public class IDCardActivity extends AppCompatActivity {
     }
 
     //@RequiresApi(api = Build.VERSION_CODES.KITKAT)
-    //private PrintJob print(String name, PrintDocumentAdapter adapter, PrintAttributes attrs) {
+    //private PrintJob print(String name, PrintDocumentAdapter adapter,PrintAttributes attrs) {
     //    startService(new Intent(this, PrintJobMonitorService.class));
     //    return (mgr.print(name, adapter, attrs));
     //}
