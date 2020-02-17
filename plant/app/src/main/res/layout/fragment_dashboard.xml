@@ -40,7 +40,7 @@
         android:layout_marginLeft="28dp"
         android:layout_marginTop="32dp"
         android:background="@drawable/button_circle_3"
-        android:text="查询邮件号"
+        android:text="查询植物序号"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

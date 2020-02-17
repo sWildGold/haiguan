@@ -43,7 +43,7 @@ import java.io.IOException;
 import java.util.List;
 
 public class MailRecords extends AppCompatActivity {
-    private static final String[] COUNTRIES = new String[]{"日用品", "食品", "文件", "数码产品", "衣物", "其他"};
+    private static final String[] COUNTRIES = new String[]{"原木及其制品", "水果", "粮谷", "棉麻烟草类", "植物源性饲料", "其他货物"};
     //private PrintManager mgr = null;
     private ImageView imageView;
     private Button btnCamera;

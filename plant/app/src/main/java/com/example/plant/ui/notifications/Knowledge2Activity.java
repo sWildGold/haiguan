@@ -75,15 +75,15 @@ public class Knowledge2Activity extends AppCompatActivity {
         for (Map.Entry<String, String> mapping : lst) {
             String title = mapping.getKey();
             String content = mapping.getValue();
-            String short_content;
-            int max_char = 50;
-            if (content.length() > max_char) {
-                short_content = content.substring(0, max_char) + "...";
-
-            } else {
-                short_content = content;
-            }
-            list.add(new HomeItem(title, content, short_content));
+//            String short_content;
+//            int max_char = 50;
+//            if (content.length() > max_char) {
+//                short_content = content.substring(0, max_char) + "...";
+//
+//            } else {
+//                short_content = content;
+//            }
+            list.add(new HomeItem(title, content, ""));
         }
     }
 }

@@ -227,7 +227,11 @@ public class DatabaseService {
                 if (rs != null) {
                     while (rs.next()) {
                         String title = rs.getString("title");
-                        String content = rs.getString("content");
+                        String content;
+                        ByteArrayInputStream msgContent = (ByteArrayInputStream) rs.getBinaryStream("content");
+                        byte[] byte_data = new byte[msgContent.available()];
+                        msgContent.read(byte_data, 0, byte_data.length);
+                        content = new String(byte_data);
                         map.put(title, content);
                     }
                 }

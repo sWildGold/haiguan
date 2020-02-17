@@ -37,13 +37,13 @@ public class Knowledge1Activity extends AppCompatActivity {
         Intent intent = getIntent();
         int classNumber = intent.getIntExtra("class", 0);
         if (classNumber == 1) {
-            setTitle("邮件监管");
+            setTitle("各类货物");
         } else if (classNumber == 2) {
-            setTitle("国家及行业标准");
+            setTitle("相关法律法规");
         } else if (classNumber == 3) {
-            setTitle("邮件处理");
+            setTitle("标准规程");
         } else if (classNumber == 4) {
-            setTitle("法律法规");
+            setTitle("主要参考书");
         }
         //setTitle("小知识"+String.valueOf(intent.getIntExtra("class",0)));
         initData(intent.getIntExtra("class", 0));

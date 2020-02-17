@@ -9,17 +9,6 @@
     tools:context=".ui.notifications.WordsActivity"
     tools:showIn="@layout/activity_words">
 
-    <TextView
-        android:id="@+id/textView_title"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:text="TextView"
-        android:textColor="#673AB7"
-        android:textSize="30sp"
-        android:textStyle="bold" />
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -30,15 +19,11 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/textView_content"
+            <ImageView
+                android:id="@+id/imageView_words"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_weight="10"
-                android:text="TextView"
-                android:textSize="24sp" />
+                />
         </LinearLayout>
     </ScrollView>
 

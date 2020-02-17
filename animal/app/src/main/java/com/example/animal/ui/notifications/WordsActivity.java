@@ -1,8 +1,12 @@
 package com.example.animal.ui.notifications;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.util.Base64;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -29,10 +33,19 @@ public class WordsActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String title = intent.getStringExtra("title");
         String content = intent.getStringExtra("content");
-        TextView textView1 = findViewById(R.id.textView_title);
-        textView1.setText(title);
-        TextView textView2 = findViewById(R.id.textView_content);
-        textView2.setText(content);
+        Bitmap bitmap=stringToBitmap(content);
+        ImageView imageView=findViewById(R.id.imageView_words);
+        imageView.setImageBitmap(bitmap);
     }
-
+    public Bitmap stringToBitmap(String string) {
+        //数据库中的String类型转换成Bitmap
+        Bitmap bitmap;
+        if (string != null) {
+            byte[] bytes = Base64.decode(string, Base64.DEFAULT);
+            bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
+            return bitmap;
+        } else {
+            return null;
+        }
+    }
 }

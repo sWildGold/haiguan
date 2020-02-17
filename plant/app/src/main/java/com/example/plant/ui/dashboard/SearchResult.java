@@ -37,7 +37,7 @@ import java.util.List;
 
 public class SearchResult extends AppCompatActivity {
     private static final String[] COUNTRIES = new String[]{
-            "日用品", "食品", "文件", "数码产品", "衣物", "其他"
+            "原木及其制品", "水果", "粮谷", "棉麻烟草", "植物源性饲料", "其他"
     };
     private Mail result;
     @Override

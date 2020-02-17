@@ -45,7 +45,7 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:text="运输单号"
+                        android:text="动检序号"
                         android:textSize="@dimen/textSize" />
 
                     <com.rengwuxian.materialedittext.MaterialEditText
@@ -53,7 +53,7 @@
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="5"
-                        android:hint="运输单号"
+                        android:hint="动检序号"
                         app:met_floatingLabel="highlight"
                         app:met_hideUnderline="false"
                         app:met_primaryColor="#982360" />
@@ -290,7 +290,7 @@
                         android:layout_height="match_parent"
                         android:layout_weight="2"
                         android:gravity="center"
-                        android:text="包裹信息"
+                        android:text="动物类别"
                         android:textSize="@dimen/textSize" />
 
 
@@ -299,7 +299,7 @@
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="5"
-                        android:hint="包裹类型" />
+                        android:hint="动物类型" />
 
                     <com.rengwuxian.materialedittext.MaterialEditText
                         android:id="@+id/mail_records_edittext4_2"

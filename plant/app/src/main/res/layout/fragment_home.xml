@@ -28,7 +28,7 @@
         android:layout_marginLeft="28dp"
         android:layout_marginTop="340dp"
         android:background="@drawable/button_circle_1"
-        android:text="邮件信息录入"
+        android:text="植物序号录入"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

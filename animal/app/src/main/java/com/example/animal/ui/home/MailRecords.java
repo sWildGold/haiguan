@@ -46,7 +46,7 @@ import java.util.Date;
 import java.util.List;
 
 public class MailRecords extends AppCompatActivity {
-    private static final String[] COUNTRIES = new String[]{"日用品", "食品", "文件", "数码产品", "衣物", "其他"};
+    private static final String[] COUNTRIES = new String[]{"猪", "马", "牛", "羊", "禽类", "其他"};
     //private PrintManager mgr = null;
     private ImageView imageView;
     private Button btnCamera;

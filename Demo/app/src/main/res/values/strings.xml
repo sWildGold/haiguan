@@ -17,7 +17,7 @@
     <string name="login_failed">"登录失败"</string>
     <string name="title_activity_passport_records">护照信息录入</string>
     <string name="title_activity_mail_records">邮件信息录入</string>
-    <string name="title_activity_chart_by_country">ChartByCountry</string>
+    <string name="title_activity_chart_by_country">按国家统计</string>
     <string name="title_activity_search">查询</string>
     <string name="title_activity_search_result">查询结果</string>
     <string name="title_activity_idcard">身份证信息录入</string>

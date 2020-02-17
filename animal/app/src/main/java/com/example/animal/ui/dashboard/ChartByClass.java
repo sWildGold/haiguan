@@ -46,7 +46,7 @@ public class ChartByClass extends AppCompatActivity {
         });
         BarChart chart = findViewById(R.id.chart_by_class);
         List<BarEntry> entryList = new ArrayList<BarEntry>();
-        final String[] quarters = new String[]{"日用品", "食品", "文件", "数码产品", "衣物", "其他"};
+        final String[] quarters = new String[]{"猪", "马", "牛", "羊", "禽类", "其他"};
         DatabaseService dbService = DatabaseService.getDbService();
         int[] d = dbService.getAllMailDataByClass();
         for (int i = 0; i < 6; ++i) {
@@ -71,8 +71,8 @@ public class ChartByClass extends AppCompatActivity {
 
         chart.invalidate();
 
-        String[][] DATA_TO_SHOW = {{"日用品", String.valueOf(d[0])}, {"食品", String.valueOf(d[1])},
-                {"文件", String.valueOf(d[2])}, {"数码产品", String.valueOf(d[3])}, {"衣物", String.valueOf(d[4])}, {"其他", String.valueOf(d[5])}};
+        String[][] DATA_TO_SHOW = {{"猪", String.valueOf(d[0])}, {"马", String.valueOf(d[1])},
+                {"牛", String.valueOf(d[2])}, {"羊", String.valueOf(d[3])}, {"禽类", String.valueOf(d[4])}, {"其他", String.valueOf(d[5])}};
         String[] HEADER_TO_SHOW = {"类别", "数量",};
         TableView<String[]> tableView = findViewById(R.id.tableView_class);
         tableView.setDataAdapter(new SimpleTableDataAdapter(this, DATA_TO_SHOW));
